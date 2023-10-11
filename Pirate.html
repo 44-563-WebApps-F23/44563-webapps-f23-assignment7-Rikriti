@@ -7,8 +7,11 @@
     crossorigin="anonymous"
   />
   <style>
-    body{
-        background-color: #d4d4d4;
+    body {
+      background-color: #d4d4d4;
+    }
+    #clickHelp {
+      cursor: pointer;
     }
   </style>
 </head>
@@ -16,101 +19,345 @@
 <body>
   <form class="ui container">
     <h1>Find the treasure by Rikriti</h1>
-
-    <p>Click on the locations to search for treasure, beware the traps!!!!</p>
+    <p>
+      Click on the locations to search for treasure, beware of the traps!!!!
+    </p>
     <br />
-    <p id="locations">Number of locations checked is 0.</p>
-    <p id="penalty">Penalty is 0.</p>
-    <p>Click for help.</p>
-    <p id="help">Help report</p>
+    <div class="ui grid">
+      <div class="four wide column">
+        <p id="locations">Number of locations checked is 0.</p>
+      </div>
+      <div class="four wide column"><p id="penalty">Penalty is 0.</p></div>
+      <div class="eight wide column">
+        <button id="clickHelp"><p onclick="help()">Click for help</p></button>
+        <p id="help">Help report</p>
+      </div>
+    </div>
     <br />
   </form>
 
   <div class="ui grid container">
     <div class="row">
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img0"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(0)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img1"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(1)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img2"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(2)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img3"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(3)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
-      </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img4"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(4)"
+        />
       </div>
     </div>
     <div class="row">
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img5"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(5)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img6"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(6)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img7"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(7)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img8"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(8)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img9"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(9)"
+        />
       </div>
     </div>
     <div class="row">
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img10"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(10)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img11"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(11)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img12"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(12)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img13"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(13)"
+        />
       </div>
-      <div class="two wide column">
-        <img src="startImage.jpg" alt="startImage" />
+      <div class="one wide column">
+        <img
+          id="img14"
+          0class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(14)"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="one wide column">
+        <img
+          id="img15"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(15)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img16"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(16)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img17"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(17)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img18"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(18)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img19"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(19)"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="one wide column">
+        <img
+          id="img20"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(20)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img21"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(21)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img22"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(22)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img23"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(23)"
+        />
+      </div>
+      <div class="one wide column">
+        <img
+          id="img24"
+          class="ui small image"
+          src="startImage.jpg"
+          alt="startImage"
+          onclick="check(24)"
+        />
       </div>
     </div>
   </div>
+
+  <script>
+    let locations = document.getElementById("locations");
+    let penaltyy = document.getElementById("penalty");
+
+    let ids = [
+      "img0",
+      "img1",
+      "img2",
+      "img3",
+      "img4",
+      "img5",
+      "img6",
+      "img7",
+      "img8",
+      "img9",
+      "img10",
+      "img11",
+      "img12",
+      "img13",
+      "img14",
+      "img15",
+      "img16",
+      "img17",
+      "img18",
+      "img19",
+      "img20",
+      "img21",
+      "img22",
+      "img23",
+      "img24",
+    ];
+    let checkCount = 0;
+    let penalty = 0;
+    let lastCheck = 0;
+    let treasureLocation = 5;
+    let trapLocation = 18;
+    let gameOver = false;
+    function check(position) {
+      if (gameOver == true) {
+        //do nothing
+        return;
+      }
+      if (position === treasureLocation) {
+        document.getElementById(ids[position]).src = "treasure.jpg";
+        gameOver = true;
+        penalty = penalty - 3;
+      } else if (position === trapLocation) {
+        document.getElementById(ids[position]).src = "trap.jpg";
+        gameOver = true;
+        penalty = penalty + 4;
+      } else {
+        document.getElementById(ids[position]).src = "pirate.jpg";
+        penalty = penalty + 1;
+      }
+      checkCount++;
+      locations.innerHTML = "Number of locations checked is " + checkCount;
+      lastCheck = position;
+      penaltyy.innerHTML = "Penalty is " + penalty;
+    }
+
+    function help() {
+      let penaltyy = document.getElementById("penalty");
+      event.preventDefault();
+
+      const treasureRow = Math.floor(treasureLocation / 5);
+      const treasureCol = treasureRow % 5;
+      const lastLocationRow = Math.floor(lastCheck / 5);
+      const lastLocationCol = lastCheck % 5;
+      const rowDiff = Math.abs(treasureRow - lastLocationRow);
+      const colDiff = Math.abs(treasureCol - lastLocationCol);
+
+      // Check if the last location and treasure are next to each other
+      let helpmsg;
+      if (rowDiff <= 1 && colDiff <= 1 && rowDiff !== colDiff) {
+        helpmsg ="Can smell it";
+      } else if (rowDiff + colDiff === 2) {
+        helpmsg= "Close Matie";
+      } else {
+        helpmsg ="Step Faster";
+      }
+      penalty += 2;
+
+      penaltyy.innerHTML = "Penalty is " + penalty;
+      document.getElementById("help").textContent = helpmsg;
+    }
+  </script>
 </body>
