@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merger in webapp</title>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
-    crossorigin="anonymous"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+        crossorigin="anonymous" />
     <style>
-       
+        #inputText {
+            width: 20% !important;
+        }
+        .ui .grid{
+            background-color: #aee4eb;
+        }
     </style>
 </head>
-<body>
-<div class="ui">
-    <h1>Builds a Merger by Rikriti Koirala</h1>
 
-<div class="fluid" id="target">
-    <div>row item 1</div>
-    <div>row item 2</div>
-    <div>row item 3</div>
-</div><br>
-<div>
-    <input type="text" id="inputText" value="Enter Text Here">
-    <p>Press the button to add an element at the end of the container.</p>
-    <button class="btn btn-success" onclick="addEndItem()">Add end</button>
-    <p>Press the button to remove the element.</p>
-    <button class="btn btn-danger" onclick="remove()">Remove</button>
-    <p>Press the button to add an element at the front of the container.</p>
-    <button class="btn btn-success" onclick="addFrontItem()">Add front</button>
-</div>
-</div>   
+<body>
+    <div class="ui container">
+        <h1>Builds a Merger by Rikriti Koirala</h1>
+        <br>
+        <div class="ui grid" id="target">
+            <div class="two wide column">row item 1</div>
+            <div class="two wide column">row item 2</div>
+            <div class="two wide column">row item 3</div>
+        </div><br>
+        <div class="ui form">
+            <div class="field">
+                <input type="text" id="inputText" value="Enter Text Here">
+            </div>
+            <div class="field">
+                <p>Press the button to add an element at the end of the container.</p>
+                <button class="ui green button" onclick="addEndItem()">Add end</button>
+            </div>
+            <div class="field">
+                <p>Press the button to remove the element.</p>
+                <button class="ui black button" onclick="remove()">Remove</button>
+            </div>
+            <div class="field">
+                <p>Press the button to add an element at the front of the container.</p>
+                <button class="ui blue button" onclick="addFrontItem()">Add front</button>
+            </div>
+        </div>
+        <div>
+        </div>
 </body>
 <script>
-    function addEndItem(){
+    function addEndItem() {
         input = document.getElementById('inputText').value;
-        create=document.createElement('div');
-        create.innerHTML=input;
-        create.className="merger";
-        fluid=document.getElementById('target');
+        create = document.createElement('div');
+        create.innerHTML = input;
+        create.className = "merger";
+        fluid = document.getElementById('target');
         fluid.appendChild(create);
     }
-        function remove(){
-            mergerItems = document.getElementsByClassName("merger");
-            length = mergerItems.length;
+    function remove() {
+        mergerItems = document.getElementsByClassName("merger");
+        length = mergerItems.length;
 
-            if (length > 0) {
-                mergerItems[Math.floor(length/2)].remove();
-            }
+        if (length > 0) {
+            mergerItems[Math.floor(length / 2)].remove();
         }
-        function addFrontItem() {
-            input = document.getElementById('inputText').value;
-            create = document.createElement('div');
-            create.innerHTML = input;
-            create.className = "merger";
-            fluid = document.getElementById('target');
-            firstChild = fluid.firstChild;
-            fluid.insertBefore(create, firstChild);
-        }
+    }
+    function addFrontItem() {
+        input = document.getElementById('inputText').value;
+        create = document.createElement('div');
+        create.innerHTML = input;
+        create.className = "merger";
+        fluid = document.getElementById('target');
+        firstChild = fluid.firstChild;
+        fluid.insertBefore(create, firstChild);
+    }
 </script>
+
 </html>
