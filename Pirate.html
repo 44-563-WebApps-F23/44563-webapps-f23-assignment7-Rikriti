@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
   <title>Treasure Find Game</title>
   <link
@@ -10,8 +11,26 @@
     body {
       background-color: #d4d4d4;
     }
+
     #clickHelp {
       cursor: pointer;
+    }
+
+    .ui.grid > .row {
+      padding: none !important;
+      padding-bottom: 0rem;
+    }
+
+    .ui.grid > * {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+
+    .ui.column.grid > [class*="one wide"].column,
+    .ui.grid > .column.row > [class*="one wide"].column,
+    .ui.grid > .row > [class*="one wide"].column,
+    .ui.grid > [class*="one wide"].column {
+      width: 7.25% !important;
     }
   </style>
 </head>
@@ -27,9 +46,13 @@
       <div class="four wide column">
         <p id="locations">Number of locations checked is 0.</p>
       </div>
-      <div class="four wide column"><p id="penalty">Penalty is 0.</p></div>
+      <div class="four wide column">
+        <p id="penalty">Penalty is 0.</p>
+      </div>
       <div class="eight wide column">
-        <button id="clickHelp"><p onclick="help()">Click for help</p></button>
+        <button id="clickHelp">
+          <p onclick="help()">Click for help</p>
+        </button>
         <p id="help">Help report</p>
       </div>
     </div>
@@ -348,11 +371,11 @@
       // Check if the last location and treasure are next to each other
       let helpmsg;
       if (rowDiff <= 1 && colDiff <= 1 && rowDiff !== colDiff) {
-        helpmsg ="Can smell it";
+        helpmsg = "Can smell it";
       } else if (rowDiff + colDiff === 2) {
-        helpmsg= "Close Matie";
+        helpmsg = "Close Matie";
       } else {
-        helpmsg ="Step Faster";
+        helpmsg = "Step Faster";
       }
       penalty += 2;
 
