@@ -2,7 +2,6 @@
 # WebApps-F23-Assignment-7
 An assignment on java script modifying the DOM and using anonymous callback functions.
 
-<br>
 hosted at:
 [pirate](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-Rikriti/pirate.html)
 [merger](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-Rikriti/merger.html)
