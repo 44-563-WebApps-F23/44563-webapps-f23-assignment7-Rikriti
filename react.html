@@ -13,6 +13,9 @@
 .ui.container {
     margin-top: 54px !important;
 }
+.ui .button{
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
@@ -47,7 +50,8 @@ function recordTime()
 }
 document.getElementById("reactButton").onclick = recordTime;
 function startTime() {
-            for (let i = 0; i <= 8; i++) {
+  const countdownStart = Math.floor(Math.random() * (10 - 2 + 1)) + 2;
+            for (let i = 0; i <countdownStart; i++) {
                 setTimeout(function () {
                     document.getElementById("count").innerHTML = "Count: " + i;
                 }, (8 - i) * 1000);
@@ -63,6 +67,7 @@ function startTime() {
             }
         }, 8000);
         document.getElementById("startButton").onclick = startTime;
+
   </script>
 
 </body>

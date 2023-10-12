@@ -11,6 +11,19 @@
     body {
       background-color: #d4d4d4;
     }
+    #penalty{
+color: brown;
+font-size: 20px;
+    }
+    #locations{
+color: brown;
+font-size: 20px;
+    }
+    #help{
+      color: brown;
+      margin-top: 5px;
+    font-size: 20px;
+    }
 
     #clickHelp {
       cursor: pointer;
@@ -43,17 +56,26 @@
     </p>
     <br />
     <div class="ui grid">
-      <div class="four wide column">
+      <div class="six wide column">
         <p id="locations">Number of locations checked is 0.</p>
       </div>
       <div class="four wide column">
         <p id="penalty">Penalty is 0.</p>
       </div>
-      <div class="eight wide column">
-        <button id="clickHelp">
-          <p onclick="help()">Click for help</p>
-        </button>
+      <form class="fields">
+        <div class="field">
+          <button class="ui red button" onclick="resetGame()">
+            <p>Reset</p>
+          </button>
+        </div>
+        <div class="field">
+          <button class="ui green button" id="clickHelp">
+            <p onclick="help()">Click for help</p>
+          </button>
+        </div>
+       <div class="field">
         <p id="help">Help report</p>
+       </form>
       </div>
     </div>
     <br />
@@ -331,8 +353,8 @@
     let checkCount = 0;
     let penalty = 0;
     let lastCheck = 0;
-    let treasureLocation = 5;
-    let trapLocation = 18;
+    let treasureLocation = Math.floor(Math.random() * 25);
+    let trapLocation = Math.floor(Math.random() * 25);
     let gameOver = false;
     function check(position) {
       if (gameOver == true) {
@@ -358,8 +380,8 @@
     }
 
     function help() {
-      let penaltyy = document.getElementById("penalty");
       event.preventDefault();
+      let penaltyy = document.getElementById("penalty");
 
       const treasureRow = Math.floor(treasureLocation / 5);
       const treasureCol = treasureRow % 5;
@@ -382,5 +404,21 @@
       penaltyy.innerHTML = "Penalty is " + penalty;
       document.getElementById("help").textContent = helpmsg;
     }
+
+    function resetGame() {
+            checkCount = 0;
+            penalty = 0;
+            lastCheck = 0;
+            gameOver = false;
+
+            trapLocation = Math.floor(Math.random() * 25);
+            treasureLocation = Math.floor(Math.random() * 25);
+            while (trapLocation === treasureLocation) {
+                treasureLocation = Math.floor(Math.random() * 25);
+            }
+            document.getElementById("locations").textContent = "Locations Checked: 0";
+            document.getElementById("penalty").textContent = "Penalty: 0";
+            document.getElementById("help").textContent = "";
+        }
   </script>
 </body>
